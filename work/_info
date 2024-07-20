@@ -8,3 +8,45 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/admin/Desktop/openIO
+vsram1
+Z0 !s110 1721468768
+!i10b 1
+!s100 ZfRaoYnC7FDL4Vk@a^e4`2
+I;E[Qmf3zo2K`<mh54``EF2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/admin/Desktop/Sram
+w1721467705
+8C:/Users/admin/Desktop/Sram/sram1.v
+FC:/Users/admin/Desktop/Sram/sram1.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1721468768.000000
+!s107 C:/Users/admin/Desktop/Sram/sram1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/admin/Desktop/Sram/sram1.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtb_sram1
+R0
+!i10b 1
+!s100 gJ3K7eMDIU1_;LdGM]R`z2
+IIGbM:P6bX=nUHXH[lM1D42
+R1
+R2
+w1721468654
+8C:/Users/admin/Desktop/Sram/sram_test.v
+FC:/Users/admin/Desktop/Sram/sram_test.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/admin/Desktop/Sram/sram_test.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/admin/Desktop/Sram/sram_test.v|
+!i113 1
+R5
+R6

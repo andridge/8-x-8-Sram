@@ -1,0 +1,97 @@
+module tb_sram1;
+
+    // Inputs
+    reg clk;
+    reg [7:0] data_in;
+    reg wr;
+    reg rd;
+    reg [2:0] add;
+
+    // Outputs
+    wire [7:0] data_out;
+
+    // Instantiate the Unit Under Test (UUT)
+    sram1 uut (
+        .clk(clk),
+        .data_in(data_in),
+        .wr(wr),
+        .rd(rd),
+        .add(add),
+        .data_out(data_out)
+    );
+
+    // Clock generation
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; // 10 ns period
+    end
+
+    // Test sequence
+    initial begin
+        // Initialize Inputs
+        data_in = 0;
+        wr = 0;
+        rd = 0;
+        add = 0;
+
+        // Wait for global reset
+        #10;
+        
+        // Write data to address 0
+        data_in = 8'hAA; // Example data
+        add = 3'b000;
+        wr = 1;
+        rd = 0;
+        #10;
+        wr = 0;
+
+        // Write data to address 1
+        data_in = 8'hBB; // Example data
+        add = 3'b001;
+        wr = 1;
+        rd = 0;
+        #10;
+        wr = 0;
+
+	// Write data to address 2
+        data_in = 8'hBB; // Example data
+        add = 3'b010;
+        wr = 1;
+        rd = 0;
+        #10;
+        wr = 0;
+
+        // Read data from address 0
+        add = 3'b000;
+        wr = 0;
+        rd = 1;
+        #10;
+        rd = 0;
+
+        // Read data from address 1
+        add = 3'b001;
+        wr = 0;
+        rd = 1;
+        #10;
+        rd = 0;
+
+	// Read data from address 2
+        add = 3'b010;
+        wr = 0;
+        rd = 1;
+        #10;
+        rd = 0;
+
+        // End simulation
+        #20;
+        $finish;
+    end
+
+    // Monitor changes
+    initial begin
+        $monitor("At time %t, clk = %b, data_in = %h, wr = %b, rd = %b, add = %b, data_out = %h", 
+                 $time, clk, data_in, wr, rd, add, data_out);
+    end
+
+endmodule
+

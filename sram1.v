@@ -15,11 +15,12 @@ module sram1(
     reg [7:0] ram [0:7];
 
     // module
+//write
     always @(posedge clk) begin
         if (wr)
             ram[add] <= data_in;
     end
-
+//read
     always @(posedge clk) begin
         if (rd)
             data_out <= ram[add];
