@@ -1,0 +1,22 @@
+module sram {
+input clk,
+//8 bits of input 
+input [7:0] data_in,
+//read write
+input wr,
+input rd,
+//for the depth is 8 memory ocation you need 2^3 bits of address lines
+input [2:0]add,
+//output
+output [7:0] data_out
+};
+//define a mempry array with a width f [7:0]
+reg [7:0] ram [0:7];
+//module
+always @{posedge clk}
+begin
+if (wr)
+ram [add] <= data_in
+end
+assign data_out = rd? ram [add] : 8'b bzzzzzzzz;
+end module
